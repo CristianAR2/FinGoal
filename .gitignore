@@ -1,10 +1,59 @@
-# v0 runtime files
+# ========================
+# ENVIRONMENT VARIABLES
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# PYTHON
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python build
+build/
+dist/
+*.egg-info/
+
+# ========================
+# NODE
+# ========================
+node_modules/
+.next/
+npm-debug.log*
+yarn-debug.log*
+
+# ========================
+# SYSTEM FILES
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# V0 FILES
+# ========================
 __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 
-# Common ignores
-node_modules/
-.next/
-.env*.local
-.DS_Store
+# ========================
+# LOGS
+# ========================
+*.log
+logs/
+
+# ========================
+# IDE
+# ========================
+.vscode/
+.idea/
