@@ -5,9 +5,9 @@ const isValidApiKey = (key: string) => {
   return key && key.startsWith("re_") && key.length > 10
 }
 
-const resend = new Resend(
-  isValidApiKey(process.env.RESEND_API_KEY || "") ? process.env.RESEND_API_KEY : undefined
-)
+const resend = isValidApiKey(process.env.RESEND_API_KEY || "") 
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null
 
 export async function POST(request: NextRequest) {
   try {

@@ -203,8 +203,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setGoals(mockGoals)
     setContributions(mockContributions)
     setNotifications(mockNotifications)
-    setRegisteredUsers([])
-    clearAllSession()
+    // Keep registeredUsers in localStorage - don't clear them on logout
+    clearSession("auth")
+    clearSession("goals")
+    clearSession("contributions")
+    clearSession("notifications")
   }, [])
 
   const recoverPassword = useCallback(
@@ -329,7 +332,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         )
       )
 
-      if (isCompleted) {
+      if (goal.status !== "completed" && isCompleted) {
         setNotifications((prev) => [
           {
             id: `n-${Date.now()}`,
