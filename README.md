@@ -37,7 +37,7 @@ cp .env.local.example .env.local
 # o edita .env.local manualmente
 
 # iniciar servidor de desarrollo
-pnpm dev
+npm run dev
 ```
 
 La app correrá en http://localhost:3000 (o 3001 si el puerto 3000 está ocupado).
